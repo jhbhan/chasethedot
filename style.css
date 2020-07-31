@@ -1,0 +1,14 @@
+.chase_circle {
+    height: 30px;
+    width: 30px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+#timer {
+    font-size: 100px;
+    margin: auto;
+}
