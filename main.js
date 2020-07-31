@@ -16,8 +16,8 @@ $(".chase_circle").mouseover(function () {
     setTimeout(moveDot, 100);
 });
 
-$(".bludgeon").mouseover(function () {
-    alert("YOU LOSE: you got hit by bludgeon");
+$(".bludger").mouseover(function () {
+    alert("YOU LOSE: you got bludgeoned");
     clickcount = 0;
     secondCounter = 0;
     minCounter = 0;
@@ -29,7 +29,7 @@ $(document).click(function () {
 
 var intervalID = window.setInterval(moveDot, 750);
 
-var intervalID = window.setInterval(bludgeonAttack, 500);
+var intervalID = window.setInterval(bludgerAttack, 500);
 var timer = window.setInterval(updateTime, 1000);
 
 function updateTime() {
@@ -68,12 +68,12 @@ function moveDot() {
     $(".chase_circle").css("left", newleft + "px");
 }
 
-function bludgeonAttack() {
+function bludgerAttack() {
     console.log(xCursorPosition);
     console.log(yCursorPosition);
 
-    $(".bludgeon").css("top", yCursorPosition + "px");
-    $(".bludgeon").css("left", xCursorPosition + "px");
+    $(".bludger").css("top", yCursorPosition + "px");
+    $(".bludger").css("left", xCursorPosition + "px");
 }
 
 function init() {

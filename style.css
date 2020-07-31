@@ -10,10 +10,11 @@
 
 #timer {
     font-size: 100px;
+    font-family: sans-serif;
     margin: auto;
 }
 
-.bludgeon {
+.bludger {
     height: 50px;
     width: 50px;
     background-color: brown;
