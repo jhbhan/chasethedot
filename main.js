@@ -1,3 +1,6 @@
+const horizontalMax = $(document).innerWidth();
+const verticalMax = $(document).innerHeight();
+
 $(".chase_circle").css("top", "300px");
 $(".chase_circle").css("left", "300px");
 
@@ -13,7 +16,7 @@ $(document).click(function () {
     clickcount++;
 });
 
-var intervalID = window.setInterval(moveDot, 1500);
+var intervalID = window.setInterval(moveDot, 750);
 var timer = window.setInterval(updateTime, 1000);
 
 function updateTime() {
@@ -25,12 +28,8 @@ function updateTime() {
     if (secondCounter < 10) {
         secondCounter = "0" + secondCounter;
     }
-    console.log($("#timer").html());
     $("#timer").html(minCounter + ":" + secondCounter);
 }
-
-const horizontalMax = window.innerWidth;
-const verticalMax = window.innerHeight;
 
 $(".chase_circle").click(function (e) {
     clickcount++;
@@ -46,11 +45,11 @@ $(".chase_circle").click(function (e) {
 function moveDot() {
     var newtop = horizontalMax * Math.random();
     var newleft = verticalMax * Math.random();
-    if (newtop > 900) {
-        newtop = 900;
+    if (newtop > verticalMax * 0.9) {
+        newtop = verticalMax * 0.9;
     }
-    if (newleft > horizontalMax) {
-        newleft = horizontalMax;
+    if (newleft > horizontalMax * 0.9) {
+        newleft = horizontalMax * 0.9;
     }
     $(".chase_circle").css("top", newtop + "px");
     $(".chase_circle").css("left", newleft + "px");
