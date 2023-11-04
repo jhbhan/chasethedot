@@ -27,10 +27,11 @@ $(document).click(function () {
     clickcount++;
 });
 
-var intervalID = window.setInterval(moveDot, 750);
+var intervalID = window.setInterval(moveDot, 1750);
 
 var intervalID = window.setInterval(bludgerAttack, 500);
 var timer = window.setInterval(updateTime, 1000);
+var userName = "";
 
 function updateTime() {
     secondCounter++;
@@ -47,9 +48,10 @@ function updateTime() {
 $(".chase_circle").click(function (e) {
     clickcount++;
     e.preventDefault();
-    alert(
-        `got it! \nnumber of clicks taken:${clickcount} \nTime Taken: ${minCounter}:${secondCounter}`
+    var username = prompt(
+        `got it! \nnumber of clicks taken:${clickcount} \nTime Taken: ${minCounter}:${secondCounter}\n Enter name for leaderboard!`
     );
+    updateLeaderboard(username, secondCounter, minCounter, clickcount);
     clickcount = 0;
     minCounter = 0;
     secondCounter = 0;
@@ -69,9 +71,6 @@ function moveDot() {
 }
 
 function bludgerAttack() {
-    console.log(xCursorPosition);
-    console.log(yCursorPosition);
-
     $(".bludger").css("top", yCursorPosition + "px");
     $(".bludger").css("left", xCursorPosition + "px");
 }

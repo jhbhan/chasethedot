@@ -1,3 +1,7 @@
+body {
+    user-select: none;
+}
+
 .chase_circle {
     height: 30px;
     width: 30px;
